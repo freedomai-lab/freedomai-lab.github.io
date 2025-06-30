@@ -20,7 +20,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 
 ---
-The current focus of the NLP group in CUHKSZ includes:<br>
+The current focus of the FreedomAI Lab in CUHKSZ includes:<br>
 &#8226; Democratizing large language models;<br>
 &#8226; Medical large language models;<br>
 &#8226; Multilingual large language models;<br>

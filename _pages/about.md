@@ -8,7 +8,7 @@ research: picture.png
 
 profile:
   align: left #right
-  image: group_photo_2022.jpeg
+  image: group_photo_2023.JPG
   image_cicular: false # crops the image to make it circular
   image_caption: Lab members in Shen Zhen as of 2023
   
@@ -21,13 +21,13 @@ social: true  # includes social icons at the bottom of the page
 
 ---
 The current focus of the NLP group in CUHKSZ includes:<br>
-1. Democratizing large language models;<br>
-2. Medical large language models;<br>
-3. Multilingual large language models;<br>
-4. Agents, Tools, HCI, and RAG in large language models;<br>
-5. Evaluation and understanding of large language models;<br>
-6. Core applications of NLP and speech.
-7. LLM applications in other fields.<br><br>
+&#8226; Democratizing large language models;<br>
+&#8226; Medical large language models;<br>
+&#8226; Multilingual large language models;<br>
+&#8226; Agents, Tools, HCI, and RAG in large language models;<br>
+&#8226; Evaluation and understanding of large language models;<br>
+&#8226; Core applications of NLP and speech.
+&#8226; LLM applications in other fields.<br><br>
 
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 

@@ -2,15 +2,15 @@
 layout: about
 title: About
 permalink: /
-subtitle: Welcome to HKU NLP group! We are a group of researchers working on natural language processing in the <a href="https://www.cs.hku.hk/">Department of Computer Science</a> at the <a href="https://www.hku.hk/">University of Hong Kong</a>. 
+subtitle: Welcome to CUHKSZ NLP group! We are a group of researchers working on natural language processing in the <a href="https://sds.cuhk.edu.cn/">School of Data Science</a> at the <a href="https://cuhk.edu.cn/zh-hans">The Chinese University of HongKong, Shenzhen  </a> and <a href="https://www.sribd.cn/"> SRIBD </a>.
 logo: group_name.png
-research: wordcloud.png
+research: picture.png
 
 profile:
   align: left #right
   image: group_photo_2022.jpeg
   image_cicular: false # crops the image to make it circular
-  image_caption: Group members in Hong Kong as of September 12, 2022 @ Tai Long Wan
+  image_caption: Lab members in Shen Zhen as of 2023
   
 
 
@@ -20,11 +20,14 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 
 ---
-The current focus of the NLP group in HKU includes:<br>
-&#8226; Pretraining algorithms, including novel objectives, neural network architectures and distillation methods;<br>
-&#8226; Semantic parsing, natural language interfaces, human-computer interaction (HCI);<br>
-&#8226; Dialog systems, long text generation and automatic evaluation;<br>
-&#8226; Machine Translation, especially in the settings of simultaneous and multimodal MT.<br><br>
+The current focus of the NLP group in CUHKSZ includes:<br>
+1. Democratizing large language models;<br>
+2. Medical large language models;<br>
+3. Multilingual large language models;<br>
+4. Agents, Tools, HCI, and RAG in large language models;<br>
+5. Evaluation and understanding of large language models;<br>
+6. Core applications of NLP and speech.
+7. LLM applications in other fields.<br><br>
 
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 

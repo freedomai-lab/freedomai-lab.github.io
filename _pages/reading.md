@@ -1,7 +1,7 @@
 ---
 layout: page
-permalink: /seminar/
-title: HKUNLP Seminar
+permalink: /project/
+title: Projects
 description:
 years: [2025, 2026]
 nav: true

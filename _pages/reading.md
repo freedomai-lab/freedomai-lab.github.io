@@ -1,7 +1,7 @@
 ---
 layout: page
-permalink: /project/
-title: Projects
+permalink: /playground/
+title: Playground
 description:
 years: [2025, 2026]
 nav: true

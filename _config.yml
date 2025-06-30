@@ -55,7 +55,9 @@ og_image: # The site-wide (default for all links) Open Graph preview image
 # Social integration
 # -----------------------------------------------------------------------------
 
-github_username: HKUNLP # your GitHub user name
+github_username: FreedomIntelligence # your GitHub user name
+hf_username: FreedomIntelligence # your hf user name
+rednote_username: 683e7dcc000000001d009399 # your rednote user name
 gitlab_username: # your GitLab user name
 twitter_username: # your Twitter handle
 linkedin_username: # your LinkedIn user name
@@ -91,7 +93,7 @@ bing_site_verification:  # out your bing-site-verification ID (Bing Webmaster)
 
 blog_name: Blog # blog_name will be displayed in your blog page
 blog_nav_title: Blog # your blog must have a title for it to be displayed in the nav bar
-blog_description: Posts on research projects @ HKU NLP Group
+blog_description: Posts on research projects @ CUHKSZ FreedomAI Lab
 permalink: /blog/:year/:title/
 
 # Pagination

@@ -1,6 +1,6 @@
 
           <div class="news">
-            <h2>📰 Latest News</h2>
+            <h2>📌 Latest News</h2>
             {% if site.news != blank -%}
             {%- assign news_size = site.news | size -%}
             {%- assign news = site.news | reverse -%}
@@ -11,7 +11,7 @@
                 {% for item in news limit: news_limit %}
                   <div class="news-item" style="padding: 12px 0; border-bottom: 1px solid var(--global-divider-color); transition: all 0.3s ease;">
                     <div class="news-date" style="font-size: 0.85rem; color: var(--global-text-color-light); font-weight: 500; margin-bottom: 5px;">
-                      📅 {{ item.date | date: "%B %-d, %Y" }}
+                      {{ item.date | date: "%B %-d, %Y" }}
                     </div>
                     <div class="news-content" style="font-size: 0.95rem; line-height: 1.4;">
                       {% if item.inline -%}

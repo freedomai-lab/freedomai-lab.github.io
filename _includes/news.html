@@ -1,31 +1,81 @@
-          
+
           <div class="news">
-            <h2>news</h2>
-            {% if site.news != blank -%} 
+            <h2>📰 Latest News</h2>
+            {% if site.news != blank -%}
             {%- assign news_size = site.news | size -%}
-            <div class="table-responsive" {% if site.news_scrollable and news_size > 3 %}style="max-height: 10vw"{% endif %}>
-              <table class="table table-sm table-borderless">
-              {%- assign news = site.news | reverse -%}
-              {% if site.news_limit %}
-              {% assign news_limit = site.news_limit %}
-              {% else %}
-              {% assign news_limit = news_size %}
-              {% endif %}
-              {% for item in news limit: news_limit %} 
-                <tr>
-                  <th scope="row">{{ item.date | date: "%b %-d, %Y" }}</th>
-                  <td>
-                    {% if item.inline -%} 
-                      {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
-                    {%- else -%} 
-                      <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
-                    {%- endif %} 
-                  </td>
-                </tr>
-              {%- endfor %} 
-              </table>
+            {%- assign news = site.news | reverse -%}
+            {%- assign news_limit = 5 -%}
+
+            <div class="news-container" style="max-height: 300px; overflow-y: auto; border: 1px solid var(--global-divider-color); border-radius: 8px; padding: 15px; background: var(--global-bg-color); box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+              <div class="news-list">
+                {% for item in news limit: news_limit %}
+                  <div class="news-item" style="padding: 12px 0; border-bottom: 1px solid var(--global-divider-color); transition: all 0.3s ease;">
+                    <div class="news-date" style="font-size: 0.85rem; color: var(--global-text-color-light); font-weight: 500; margin-bottom: 5px;">
+                      📅 {{ item.date | date: "%B %-d, %Y" }}
+                    </div>
+                    <div class="news-content" style="font-size: 0.95rem; line-height: 1.4;">
+                      {% if item.inline -%}
+                        <span style="color: var(--global-text-color);">{{ item.content | remove: '<p>' | remove: '</p>' | emojify }}</span>
+                      {%- else -%}
+                        <a class="news-title" href="{{ item.url | relative_url }}" style="color: var(--global-theme-color); text-decoration: none; font-weight: 500;">
+                          🔗 {{ item.title }}
+                        </a>
+                      {%- endif %}
+                    </div>
+                  </div>
+                {%- endfor %}
+
+                {% if news_size > news_limit %}
+                  <div class="news-more" style="text-align: center; padding: 15px 0; color: var(--global-text-color-light); font-style: italic;">
+                    📋 Showing {{ news_limit }} of {{ news_size }} news items
+                  </div>
+                {% endif %}
+              </div>
             </div>
-          {%- else -%} 
-            <p>No news so far...</p>
-          {%- endif %} 
+
+            <style>
+              .news-container::-webkit-scrollbar {
+                width: 6px;
+              }
+              .news-container::-webkit-scrollbar-track {
+                background: var(--global-bg-color);
+                border-radius: 3px;
+              }
+              .news-container::-webkit-scrollbar-thumb {
+                background: var(--global-theme-color);
+                border-radius: 3px;
+                opacity: 0.7;
+              }
+              .news-container::-webkit-scrollbar-thumb:hover {
+                background: var(--global-theme-color);
+                opacity: 1;
+              }
+              .news-item:hover {
+                background-color: var(--global-hover-color, rgba(0,0,0,0.05));
+                border-radius: 4px;
+                margin: 0 -8px;
+                padding: 12px 8px !important;
+              }
+              .news-item:last-child {
+                border-bottom: none;
+              }
+              .news-title:hover {
+                text-decoration: underline !important;
+              }
+              @media (max-width: 768px) {
+                .news-container {
+                  max-height: 250px;
+                  padding: 10px;
+                }
+                .news-item {
+                  padding: 10px 0 !important;
+                }
+              }
+            </style>
+
+          {%- else -%}
+            <div style="text-align: center; padding: 20px; color: var(--global-text-color-light); font-style: italic;">
+              📭 No news available at the moment...
+            </div>
+          {%- endif %}
           </div>

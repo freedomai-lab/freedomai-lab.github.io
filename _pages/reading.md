@@ -8,59 +8,261 @@ nav: true
 nav_order: 2
 ---
 
-<html lang="en">
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 40px;
-    }
-    h1 {
-      font-size: 2.5em;
-    }
-    h2 {
-      font-size: 1.5em;
-      margin-top: 30px;
-    }
-    ul {
-      list-style-type: disc;
-      margin-left: 20px;
-    }
-    p {
-      margin-top: 30px;
-      font-size: 1em;
-      color: #808080;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #ffffff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .page-title {
+            text-align: center;
+            color: #2d3748;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        .cards-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .model-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 16px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+
+        .model-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        .model-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 2px solid #f0f0f0;
+            flex-shrink: 0;
+        }
+
+        .card-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .model-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .model-description {
+            color: #4a5568;
+            line-height: 1.5;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+        }
+
+        .links-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            background-color: #e2e8f0;
+            color: #4a5568;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+
+        .badge:hover {
+            background-color: #cbd5e0;
+            color: #2d3748;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .badge.demo {
+            background-color: #e6fffa;
+            color: #234e52;
+            border-color: #81e6d9;
+        }
+
+        .badge.demo:hover {
+            background-color: #b2f5ea;
+        }
+
+        .badge.github {
+            background-color: #f7fafc;
+            color: #2d3748;
+            border-color: #e2e8f0;
+        }
+
+        .badge.github:hover {
+            background-color: #edf2f7;
+        }
+
+        .badge.huggingface {
+            background-color: #fef5e7;
+            color: #744210;
+            border-color: #f6e05e;
+        }
+
+        .badge.huggingface:hover {
+            background-color: #faf089;
+        }
+
+        .icon {
+            width: 16px;
+            height: 16px;
+        }
+
+        .open-source-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: linear-gradient(135deg, #48bb78, #38a169);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            box-shadow: 0 2px 4px rgba(72, 187, 120, 0.3);
+            z-index: 10;
+        }
+
+        @media (max-width: 768px) {
+            .model-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .avatar {
+                align-self: center;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        
+        <div class="cards-grid">
+            <!-- 模型卡片 1 -->
+            <div class="model-card">
+                <img src="https://via.placeholder.com/60x60/667eea/ffffff?text=GPT" alt="GPT-4 Avatar" class="avatar">
+                <div class="card-content">
+                    <h2 class="model-name">Image Generation: Janus-4o</h2>
+                    <p class="model-description">
+                        Janus-4o is a multimodal model that can generate high-quality images from text or from text and images, trained on just 91K samples made by GPT-4o.    
+                    </p>
+                    <div class="links-container">
+                        <a href="#" class="badge demo">
+                            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2L2 7v10c0 5.55 3.84 9.95 9 11 5.16-1.05 9-5.45 9-11V7l-10-5z"/>
+                            </svg>
+                            Try Online
+                        </a>
+                        <a href="#" class="badge github">
+                            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            GitHub
+                        </a>
+                        <a href="#" class="badge huggingface">
+                            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.5c-5.25 0-9.5 4.25-9.5 9.5s4.25 9.5 9.5 9.5 9.5-4.25 9.5-9.5-4.25-9.5-9.5-9.5zm0 17c-4.14 0-7.5-3.36-7.5-7.5s3.36-7.5 7.5-7.5 7.5 3.36 7.5 7.5-3.36 7.5-7.5 7.5z"/>
+                            </svg>
+                            Hugging Face
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-  <p>HKUNLP seminars welcome speakers from the broader ML community. Sign up to become a speaker <a href="https://docs.google.com/forms/d/e/1FAIpQLSdz2q1zSnpuLR6jAalS2_ChXtSdcvSgbsY3UR25YquF0P9Phw/viewform?usp=dialog">here</a>.</p>
+            <!-- 模型卡片 2 -->
+            <div class="model-card">
+                <div class="open-source-badge">Open Source</div>
+                <img src="https://via.placeholder.com/60x60/764ba2/ffffff?text=LLM" alt="Claude Avatar" class="avatar">
+                <div class="card-content">
+                    <h2 class="model-name">Medical LLM: HuatuoGPT-II</h2>
+                    <p class="model-description">
+                        HuatuoGPT-II uses a unified input-output format for domain adaptation and achieves top performance in Medical, even surpassing GPT-4 in some tasks.    
+                    </p>
+                    <div class="links-container">
+                        <a href="https://www.huatuogpt.cn/" class="badge demo">
+                            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2L2 7v10c0 5.55 3.84 9.95 9 11 5.16-1.05 9-5.45 9-11V7l-10-5z"/>
+                            </svg>
+                            Try Online
+                        </a>
+                        <a href="#" class="badge github">
+                            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            GitHub
+                        </a>
+                        <a href="#" class="badge huggingface">
+                            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.5c-5.25 0-9.5 4.25-9.5 9.5s4.25 9.5 9.5 9.5 9.5-4.25 9.5-9.5-4.25-9.5-9.5-9.5zm0 17c-4.14 0-7.5-3.36-7.5-7.5s3.36-7.5 7.5-7.5 7.5 3.36 7.5 7.5-3.36 7.5-7.5 7.5z"/>
+                            </svg>
+                            Hugging Face
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-  <h2>Student Seminar</h2>
-  <ul>
-    <li>Friday 11am, May 9, 2025: <a href="https://siyan-zhao.github.io/">Siyan Zhao</a>, UCLA</li>
-    <li>Friday 11am, May 16, 2025: <a href="https://luccachiang.github.io/">Guangqi Jiang</a>, UCSD</li>
-    <li>Wednesday 3pm, June 11th, 2025: <a href="https://rulegreen.github.io/">Hongru Wang</a>, CUHK</li>
-
-  </ul>
-
-  <h2>Distinguished Seminar</h2>
-  <ul>
-    <li>To be scheduled</li>
-  </ul>
-
-  <h2>Seminar Calendar</h2>
-  <iframe
-    src="https://calendar.google.com/calendar/embed?src=b3a20326dada1de676768831b85826d6958525ba7426738370ffcf6501678aa4%40group.calendar.google.com&ctz=Asia%2FHong_Kong"
-    style="border: 0"
-    width="800"
-    height="600"
-    frameborder="0"
-    scrolling="no">
-  </iframe>
+        </div>
+    </div>
 </body>
 </html>

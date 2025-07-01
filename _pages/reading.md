@@ -182,6 +182,55 @@ nav_order: 2
             z-index: 10;
         }
 
+        .ai-model-showcase-filter-tabs {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 2rem;
+        }
+
+        .ai-model-showcase-filter-row {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .ai-model-showcase-filter-tab {
+            padding: 8px 20px;
+            background: #f7fafc;
+            color: #4a5568;
+            border: 2px solid #e2e8f0;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .ai-model-showcase-filter-tab:hover {
+            background: #edf2f7;
+            border-color: #cbd5e0;
+            transform: translateY(-1px);
+        }
+
+        .ai-model-showcase-filter-tab.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-color: #667eea;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        .ai-model-showcase-card {
+            transition: all 0.3s ease;
+        }
+
+        .ai-model-showcase-card.hidden {
+            display: none;
+        }
+
         @media (max-width: 768px) {
             .ai-model-showcase-card {
                 flex-direction: column;
@@ -197,9 +246,26 @@ nav_order: 2
 <body class="ai-model-showcase-body">
     <div class="ai-model-showcase-container">
 
+        <!-- 分类筛选标签 -->
+        <div class="ai-model-showcase-filter-tabs">
+            <!-- 第一排 -->
+            <div class="ai-model-showcase-filter-row">
+                <div class="ai-model-showcase-filter-tab active" data-category="all">全部</div>
+                <div class="ai-model-showcase-filter-tab" data-category="llm">LLM</div>
+                <div class="ai-model-showcase-filter-tab" data-category="audio">Audio</div>
+            </div>
+            <!-- 第二排 -->
+            <div class="ai-model-showcase-filter-row">
+                <div class="ai-model-showcase-filter-tab" data-category="image">Image</div>
+                <div class="ai-model-showcase-filter-tab" data-category="video">Video</div>
+                <div class="ai-model-showcase-filter-tab" data-category="multimodal">Multimodal</div>
+                <div class="ai-model-showcase-filter-tab" data-category="benchmark">Benchmark</div>
+            </div>
+        </div>
+
         <div class="ai-model-showcase-cards-grid">
             <!-- 模型卡片 1 -->
-            <div class="ai-model-showcase-card">
+            <div class="ai-model-showcase-card" data-category="image">
                 <div class="ai-model-showcase-open-source-badge">开源</div>
                 <img src="https://cdn-1.webcatalog.io/catalog/discord-bot-list/discord-bot-list-icon-filled-256.png?v=1714774149420" alt="GPT-4 Avatar" class="ai-model-showcase-avatar">
                 <div class="ai-model-showcase-card-content">
@@ -237,7 +303,7 @@ nav_order: 2
             </div>
 
             <!-- 模型卡片 2 -->
-            <div class="ai-model-showcase-card">
+            <div class="ai-model-showcase-card" data-category="llm">
                 <div class="ai-model-showcase-open-source-badge">开源</div>
                 <img src="https://cdn-1.webcatalog.io/catalog/discord-bot-list/discord-bot-list-icon-filled-256.png?v=1714774149420" alt="Claude Avatar" class="ai-model-showcase-avatar">
                 <div class="ai-model-showcase-card-content">
@@ -270,5 +336,34 @@ nav_order: 2
 
         </div>
     </div>
+
+    <script>
+        // 分类筛选功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterTabs = document.querySelectorAll('.ai-model-showcase-filter-tab');
+            const cards = document.querySelectorAll('.ai-model-showcase-card');
+
+            filterTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+
+                    // 更新活跃标签
+                    filterTabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // 筛选卡片
+                    cards.forEach(card => {
+                        const cardCategory = card.getAttribute('data-category');
+
+                        if (category === 'all' || cardCategory === category) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>

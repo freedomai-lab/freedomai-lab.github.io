@@ -22,12 +22,15 @@ social: true  # includes social icons at the bottom of the page
 ---
 The current focus of the FreedomAI Lab in CUHKSZ includes:<br>
 &#8226; Democratizing large language models;<br>
-&#8226; Medical large language models;<br>
-&#8226; Multilingual large language models;<br>
-&#8226; Agents, Tools, HCI, and RAG in large language models;<br>
-&#8226; Evaluation and understanding of large language models;<br>
-&#8226; Core applications of NLP and speech;<br>
-&#8226; LLM applications in other fields.<br><br>
+&#8226; Medical Large Language Models;<br>
+&#8226; Reasoning Large Language Models;<br>
+&#8226; Unified Multimodal Models for Understanding and Generation;<br>
+&#8226; Multilingual Large Language Models;<br>
+&#8226; Agents, Tools, HCI, and RAG in Large Language Models;<br>
+&#8226; Evaluation and Understanding of Large Language Models;<br>
+&#8226; Core applications of NLP and Speech;<br>
+&#8226; LLM Applications in other fields.<br>
+
 
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 

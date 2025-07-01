@@ -21,7 +21,7 @@ social: true  # includes social icons at the bottom of the page
 
 ---
 The current focus of the FreedomAI Lab in CUHKSZ includes:<br>
-&#8226; Democratizing large language models;<br>
+&#8226; Democratizing Large Language Models;<br>
 &#8226; Medical Large Language Models;<br>
 &#8226; Reasoning Large Language Models;<br>
 &#8226; Unified Multimodal Models for Understanding and Generation;<br>

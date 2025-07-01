@@ -200,7 +200,7 @@ nav_order: 2
         <div class="ai-model-showcase-cards-grid">
             <!-- 模型卡片 1 -->
             <div class="ai-model-showcase-card">
-                <div class="ai-model-showcase-open-source-badge">Open Source</div>
+                <div class="ai-model-showcase-open-source-badge">开源</div>
                 <img src="https://cdn-1.webcatalog.io/catalog/discord-bot-list/discord-bot-list-icon-filled-256.png?v=1714774149420" alt="GPT-4 Avatar" class="ai-model-showcase-avatar">
                 <div class="ai-model-showcase-card-content">
                     <h2 class="ai-model-showcase-model-name">Image Generation: Janus-4o</h2>
@@ -238,7 +238,7 @@ nav_order: 2
 
             <!-- 模型卡片 2 -->
             <div class="ai-model-showcase-card">
-                <div class="ai-model-showcase-open-source-badge">Open Source</div>
+                <div class="ai-model-showcase-open-source-badge">开源</div>
                 <img src="https://cdn-1.webcatalog.io/catalog/discord-bot-list/discord-bot-list-icon-filled-256.png?v=1714774149420" alt="Claude Avatar" class="ai-model-showcase-avatar">
                 <div class="ai-model-showcase-card-content">
                     <h2 class="ai-model-showcase-model-name">Medical LLM: HuatuoGPT-II</h2>
